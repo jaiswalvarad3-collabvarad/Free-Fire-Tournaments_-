@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FF MAX BATTLE ARENA | VXV Tournaments</title>
+
+<style>
+:root {
+  --red: #ff303d;
+  --gold: #ffc83d;
+  --bg: #08090d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #321017, #08090d 60%);
+  color: white;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0b0c12ed;
+  border-bottom: 1px solid #4a252b;
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 490px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 7px 15px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 76px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(110deg, var(--red), #a90d22);
+  color: white;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 22px;
+}
+
+section {
+  padding: 55px 7%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  color: var(--gold);
+}
+
+.cards, .prizes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.card, .prize {
+  background: linear-gradient(145deg, #1a1c27, #101118);
+  border: 1px solid #343643;
+  border-radius: 13px;
+  padding: 23px;
+  text-align: center;
+}
+
+.card h3, .prize h3 {
+  color: var(--gold);
+  margin: 8px 0;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.fee {
+  font-size: 27px;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.prize {
+  border-color: #6a5124;
+}
+
+.prize strong {
+  font-size: 25px;
+}
+
+.register-wrap {
+  max-width: 920px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.qr-card {
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.qr-card img {
+  width: min(100%, 330px);
+  display: block;
+  margin: auto;
+}
+
+.qr-card h3 {
+  margin-top: 10px;
+}
+
+.steps h3 {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.steps ol {
+  padding-left: 22px;
+}
+
+.steps li {
+  margin: 10px 0;
+}
+
+.handle {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 12px;
+  text-decoration: none;
+}
+
+.notice {
+  max-width: 900px;
+  margin: 30px auto 0;
+  border: 1px solid #5b3439;
+  background: #1c1015;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.notice strong {
+  color: var(--gold);
+}
+
+.leaderboard {
+  text-align: center;
+  color: #b8bac5;
+}
+
+footer {
+  text-align: center;
+  padding: 28px;
+  background: #0c0d12;
+  border-top: 1px solid #343643;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+@media(max-width:700px) {
+  header {
+    flex-direction: column;
+  }
+
+  .register-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 410px;
+  }
+
+  section {
+    padding: 42px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🔥 FF MAX BATTLE ARENA</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#modes">MODES</a>
+    <a href="#prizes">PRIZES</a>
+    <a href="#register">REGISTER</a>
+    <a href="#updates">UPDATES</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div>
+    <div class="tag">VXV TOURNAMENTS • PLAY • COMPETE • WIN</div>
+    <h1>FF MAX <span>BATTLE ARENA</span></h1>
+    <p>Show your skills. Fight for the Booyah. Become the champion!</p>
+    <a class="btn" href="#register">REGISTER NOW ↗</a>
+  </div>
+</section>
+
+<section id="modes">
+  <h2 class="section-title">TOURNAMENT <span>DETAILS</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">🎮</div>
+      <h3>GAME MODES</h3>
+      <p>Solo • Duo • Squad</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🗺️</div>
+      <h3>BATTLE MAP</h3>
+      <p>Bermuda</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">👥</div>
+      <h3>SQUAD LIMIT</h3>
+      <p class="fee">24</p>
+      <p>Squads only</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">⚡</div>
+      <h3>ENTRY FEES</h3>
+      <p>Solo <span class="fee">₹30</span></p>
+      <p>Duo <span class="fee">₹30</span></p>
+      <p>Squad <span class="fee">₹60</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="prizes">
+  <h2 class="section-title">WIN BIG. <span>PLAY SMART.</span></h2>
+
+  <div class="prizes">
+    <div class="prize">
+      <h3>🥇 SOLO PRIZES</h3>
+      <p>1st Winner</p>
+      <strong>₹300</strong>
+      <p>2nd Winner</p>
+      <strong>₹100</strong>
+    </div>
+
+    <div class="prize">
+      <h3>🏆 DUO PRIZE</h3>
+      <p>1st Winner</p>
+      <strong>₹400</strong>
+    </div>
+
+    <div class="prize">
+      <h3>🏆 SQUAD PRIZE</h3>
+      <p>1st Winner</p>
+      <strong>₹400</strong>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+  <h2 class="section-title">JOIN THE <span>BATTLE</span></h2>
+
+  <div class="register-wrap">
+
+    <div class="qr-card">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=https%3A%2F%2Fwww.instagram.com%2Fvxv_tournaments%2F"
+        alt="VXV Tournaments Instagram QR Code">
+
+      <h3>@VXV_TOURNAMENTS</h3>
+      <p>Scan this QR code to open our Instagram profile.</p>
+    </div>
+
+    <div class="steps">
+      <h3>HOW TO REGISTER</h3>
+
+      <ol>
+        <li>Scan the Instagram QR code.</li>
+        <li>Open @VXV_TOURNAMENTS and send a Direct Message.</li>
+        <li>Select your mode: Solo, Duo or Squad.</li>
+        <li>Send your in-game name and Free Fire UID.</li>
+        <li>For Duo and Squad, send all players' details.</li>
+        <li>Follow the organizer's payment and confirmation instructions.</li>
+      </ol>
+
+      <a class="handle"
+         href="https://www.instagram.com/vxv_tournaments/"
+         target="_blank">
+         OPEN @VXV_TOURNAMENTS ↗
+      </a>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    <strong>IMPORTANT:</strong>
+    All match information, timings, room details and tournament announcements
+    will be shared through Instagram Stories of @VXV_TOURNAMENTS.
+  </div>
+</section>
+
+<section id="updates">
+  <h2 class="section-title">TOURNAMENT <span>LEADERBOARD</span></h2>
+
+  <div class="leaderboard">
+    <p>
+      Results and leaderboard updates will be announced on
+      @VXV_TOURNAMENTS Instagram Stories.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>🔥 FF MAX BATTLE ARENA</strong>
+  <p>Official updates: Instagram @VXV_TOURNAMENTS</p>
+  <p>Fan-organized tournament. Not affiliated with Garena.</p>
+</footer>
+
+</body>
+</html>
